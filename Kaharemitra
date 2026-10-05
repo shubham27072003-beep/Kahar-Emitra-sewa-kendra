@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Kahar eMitra Sewa Kendra - eMitra, Aadhaar, Banking, Print, Scan और अन्य सेवाएं">
+
+<title>Kahar eMitra Sewa Kendra</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "Noto Sans Devanagari", sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #07549b, #078b8b);
+    color: white;
+    text-align: center;
+    padding: 40px 15px;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.call {
+    background: #16883f;
+}
+
+.whatsapp {
+    background: #20bd61;
+}
+
+.map {
+    background: #d94a3a;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    color: #07549b;
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.service-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 18px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px 15px;
+    text-align: center;
+    cursor: pointer;
+
+    border: 1px solid #e5eaf0;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,0.13);
+}
+
+.service-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    color: #172033;
+}
+
+/* =========================
+   SERVICE LIST
+========================= */
+
+.service-list {
+    display: none;
+
+    background: white;
+
+    margin-top: 20px;
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    animation: openBox 0.25s ease;
+}
+
+.service-list.active {
+    display: block;
+}
+
+.service-list h2 {
+    color: #07549b;
+    margin-bottom: 18px;
+}
+
+.service-items {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 12px;
+
+    list-style: none;
+}
+
+.service-items li {
+    background: #eef6fb;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    border-left: 4px solid #078b8b;
+
+    font-size: 15px;
+}
+
+/* =========================
+   ADDRESS
+========================= */
+
+.address-box {
+    margin-top: 30px;
+
+    background: #fff8df;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    border: 1px solid #f1df9c;
+}
+
+.address-box h3 {
+    color: #8a6500;
+    margin-bottom: 8px;
+}
+
+/* =========================
+   CONTACT BOX
+========================= */
+
+.contact-box {
+    margin-top: 20px;
+
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.07);
+}
+
+.contact-box a {
+    color: #07549b;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 30px;
+
+    background: #172033;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes openBox {
+
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 30px 12px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .logo {
+        font-size: 45px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .service-card {
+        padding: 20px 8px;
+    }
+
+    .service-icon {
+        font-size: 35px;
+    }
+
+    .service-card h3 {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 90%;
+        max-width: 280px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">🏪</div>
+
+    <h1>Kahar eMitra Sewa Kendra</h1>
+
+    <p>
+        eMitra • Aadhaar • Banking • Print • Scan • Other Services
+    </p>
+
+
+    <div class="buttons">
+
+        <!-- CALL -->
+
+        <a
+            class="btn call"
+            href="tel:8696528647"
+        >
+            📞 Call Now
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="btn whatsapp"
+            href="https://wa.me/918696528647"
+            target="_blank"
+        >
+            💬 WhatsApp
+        </a>
+
+
+        <!-- GOOGLE MAP -->
+
+        <a
+            class="btn map"
+            href="https://www.google.com/maps/search/?api=1&query=Vikas+Nagar+Nanta+Road+Kunhadi+Kota+324008"
+            target="_blank"
+        >
+            📍 Google Maps
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+
+    <div class="section-title">
+
+        <h2>हमारी सेवाएं</h2>
+
+        <p>
+            किसी category पर क्लिक करके सभी सेवाएं देखें
+        </p>
+
+    </div>
+
+
+
+    <!-- SERVICE CARDS -->
+
+    <div class="service-grid">
+
+
+        <!-- EMITRA -->
+
+        <div
+            class="service-card"
+            onclick="showService('emitra')"
+        >
+
+            <div class="service-icon">
+                🏛️
+            </div>
+
+            <h3>
+                eMitra Services
+            </h3>
+
+        </div>
+
+
+
+        <!-- AADHAAR -->
+
+        <div
+            class="service-card"
+            onclick="showService('aadhaar')"
+        >
+
+            <div class="service-icon">
+                🪪
+            </div>
+
+            <h3>
+                Aadhaar Services
+            </h3>
+
+        </div>
+
+
+
+        <!-- BANKING -->
+
+        <div
+            class="service-card"
+            onclick="showService('banking')"
+        >
+
+            <div class="service-icon">
+                🏦
+            </div>
+
+            <h3>
+                Banking Services
+            </h3>
+
+        </div>
+
+
+
+        <!-- OTHER -->
+
+        <div
+            class="service-card"
+            onclick="showService('other')"
+        >
+
+            <div class="service-icon">
+                🛠️
+            </div>
+
+            <h3>
+                Other Services
+            </h3>
+
+        </div>
+
+
+
+        <!-- PRINT -->
+
+        <div
+            class="service-card"
+            onclick="showService('print')"
+        >
+
+            <div class="service-icon">
+                🖨️
+            </div>
+
+            <h3>
+                Print & Scan
+            </h3>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         EMITRA SERVICES
+    ========================= -->
+
+    <section
+        id="emitra"
+        class="service-list"
+    >
+
+        <h2>
+            🏛️ eMitra Services
+        </h2>
+
+        <ul class="service-items">
+
+            <li>
+                जाति प्रमाण पत्र
+                <br>
+                Caste Certificate
+            </li>
+
+            <li>
+                Bonafide Certificate
+            </li>
+
+            <li>
+                Police Verification
+            </li>
+
+            <li>
+                New Pension Apply
+            </li>
+
+            <li>
+                Jan Aadhaar Card
+                Create / Update
+            </li>
+
+            <li>
+                Light Bill Payment
+            </li>
+
+            <li>
+                Water Bill Payment
+            </li>
+
+            <li>
+                Palanhaar Apply
+            </li>
+
+            <li>
+                अन्य eMitra संबंधित सेवाएं
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================
+         AADHAAR SERVICES
+    ========================= -->
+
+    <section
+        id="aadhaar"
+        class="service-list"
+    >
+
+        <h2>
+            🪪 Aadhaar Services
+        </h2>
+
+        <ul class="service-items">
+
+            <li>
+                Aadhaar Address Update
+            </li>
+
+            <li>
+                Aadhaar Mobile Number Update
+            </li>
+
+            <li>
+                Aadhaar Card Download
+            </li>
+
+            <li>
+                Aadhaar Card Print
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================
+         BANKING SERVICES
+    ========================= -->
+
+    <section
+        id="banking"
+        class="service-list"
+    >
+
+        <h2>
+            🏦 Banking Services
+        </h2>
+
+        <ul class="service-items">
+
+            <li>
+                Bank of Baroda
+                Account Opening
+            </li>
+
+            <li>
+                Canara Bank
+                Account Opening
+            </li>
+
+            <li>
+                Credit Card Money Withdrawal
+            </li>
+
+            <li>
+                AEPS Cash Withdrawal
+            </li>
+
+            <li>
+                AEPS Balance Inquiry
+            </li>
+
+            <li>
+                AEPS Mini Statement
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================
+         OTHER SERVICES
+    ========================= -->
+
+    <section
+        id="other"
+        class="service-list"
+    >
+
+        <h2>
+            🛠️ Other Services
+        </h2>
+
+        <ul class="service-items">
+
+            <li>
+                PVC Card Printing
+            </li>
+
+            <li>
+                Lamination
+            </li>
+
+            <li>
+                Resume Creating
+            </li>
+
+            <li>
+                Mobile Accessories
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRINT SERVICES
+    ========================= -->
+
+    <section
+        id="print"
+        class="service-list"
+    >
+
+        <h2>
+            🖨️ Print & Scan
+        </h2>
+
+        <ul class="service-items">
+
+            <li>
+                Zerox / Photocopy
+            </li>
+
+            <li>
+                Document Scan
+            </li>
+
+            <li>
+                Digital Certificate Print
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =========================
+         ADDRESS
+    ========================= -->
+
+    <div class="address-box">
+
+        <h3>
+            📍 हमारा पता
+        </h3>
+
+        <p>
+            Vikas Nagar, Nanta Road,
+            Kunhadi, Kota,
+            Rajasthan – 324008
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <div class="contact-box">
+
+        <h3>
+            📞 संपर्क करें
+        </h3>
+
+        <p>
+            Call / WhatsApp:
+            <a href="tel:8696528647">
+                8696528647
+            </a>
+        </p>
+
+        <br>
+
+        <a
+            class="btn whatsapp"
+            href="https://wa.me/918696528647"
+            target="_blank"
+        >
+            💬 WhatsApp पर संपर्क करें
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Kahar eMitra Sewa Kendra
+    </p>
+
+    <p>
+        All Rights Reserved
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function showService(serviceId) {
+
+    // सभी service sections बंद करें
+
+    const allServices =
+        document.querySelectorAll(".service-list");
+
+    allServices.forEach(function(section) {
+
+        section.classList.remove("active");
+
+    });
+
+
+    // जिस service पर click किया है उसे खोलें
+
+    const selected =
+        document.getElementById(serviceId);
+
+
+    if (selected) {
+
+        selected.classList.add("active");
+
+
+        // मोबाइल पर section तक automatically जाएं
+
+        setTimeout(function() {
+
+            selected.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "nearest"
+
+            });
+
+        }, 100);
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
